@@ -1,11 +1,8 @@
 const api_key = `dde669c54dbec53c562abad52d716702`;
 const base_url = `https://api.openweathermap.org/data/2.5`;
-const city_name = `Novi Pazar`;
 let glavni = document.querySelector(".glavni");
 const btn = document.querySelector(".btn");
 let inp = document.querySelector(".input");
-console.log(inp);
-console.log(btn);
 
 async function getData(city){
     const data = await fetch(`${base_url}/weather?q=${city}&appid=${api_key}&units=metric`);
@@ -49,6 +46,6 @@ function createCard(name,main,pic){
      card.append(maksimalna);
      card.append(minimalna);
      card.append(humidalnost);
+     glavni.innerHTML = "";
      glavni.append(card);
 }
-
